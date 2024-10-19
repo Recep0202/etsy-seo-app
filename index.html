@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Etsy SEO App - Generate best titles, descriptions, and tags">
+    <title>Etsy SEO App</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        h1 { text-align: center; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        input, textarea { width: 100%; padding: 10px; margin: 10px 0; }
+        button { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Etsy SEO Generator</h1>
+        <form id="seo-form">
+            <label for="product-name">Product Name</label>
+            <input type="text" id="product-name" placeholder="Enter product name">
+
+            <label for="product-features">Product Features</label>
+            <textarea id="product-features" rows="4" placeholder="Enter product features"></textarea>
+
+            <button type="button" onclick="generateSEO()">Generate SEO</button>
+        </form>
+
+        <h2>Generated SEO</h2>
+        <p id="generated-title">Title: <span></span></p>
+        <p id="generated-description">Description: <span></span></p>
+        <p id="generated-tags">Tags: <span></span></p>
+    </div>
+
+    <script>
+        function generateSEO() {
+            const name = document.getElementById('product-name').value;
+            const features = document.getElementById('product-features').value;
+
+            if (name && features) {
+                document.getElementById('generated-title').querySelector('span').textContent = name + " | Best SEO Title";
+                document.getElementById('generated-description').querySelector('span').textContent = name + " is perfect for " + features;
+                document.getElementById('generated-tags').querySelector('span').textContent = "tag1, tag2, tag3";
+            } else {
+                alert("Please enter both product name and features.");
+            }
+        }
+    </script>
+</body>
+</html>
